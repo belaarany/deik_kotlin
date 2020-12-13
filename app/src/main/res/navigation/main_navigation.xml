@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="deik.belaarany.bitly.screens.welcome.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_createdFragment"
+            app:destination="@id/createdFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_linkListFragment"
+            app:destination="@id/linkListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createdFragment"
+        android:name="deik.belaarany.bitly.screens.created.CreatedFragment"
+        android:label="CreatedFragment"
+        tools:layout="@layout/fragment_created" >
+        <argument
+            android:name="longUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/linkListFragment"
+        android:name="deik.belaarany.bitly.screens.linkList.LinkListFragment"
+        android:label="fragment_link_list"
+        tools:layout="@layout/fragment_links" />
+</navigation>
