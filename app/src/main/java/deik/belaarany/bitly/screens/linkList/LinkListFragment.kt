@@ -26,6 +26,10 @@ class LinkListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreate(savedInstanceState)
 
+        listString.add("Link 1")
+        listString.add("Link 2")
+        listString.add("Link 2")
+
         val fragmentView: View = inflater.inflate(R.layout.fragment_links, container, false)
         val recyclerView: RecyclerView = fragmentView.findViewById<View>(R.id.rvLinks) as RecyclerView
         val layoutManager = LinearLayoutManager(activity)
@@ -44,11 +48,9 @@ class LinkListFragment : Fragment() {
                 Log.d("iterate", item["link"] as String)
                 animalNames.add(item["link"] as String)
 
-                adapter.refreshData(item["link"] as String)
-                adapter.notifyDataSetChanged()
+                //adapter.refreshData(item["link"] as String)
+                //adapter.notifyDataSetChanged()
             }
-
-
         }
 
         return fragmentView
